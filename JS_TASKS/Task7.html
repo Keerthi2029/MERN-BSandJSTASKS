@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task-7</title>
+    <style>
+        #image {
+            position: absolute;
+            top: 50px;
+            left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./train.jpg"
+        id="image" style="width: 300px;">
+    <div id="but" style="margin-top: 375px;">
+        <center>
+            <h1 style="color:rgb(7, 5, 131);">Click the following buttons to handle animation</h1>
+
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+
+        </center>
+
+    </div>
+
+    <script>
+        var image = document.getElementById("image");
+        var startButton = document.getElementById("start");
+        var stopButton = document.getElementById("stop");
+
+        startButton.addEventListener("click", function () {
+            image.style.left = "300px";
+            var interval = setInterval(function () {
+                image.style.left = parseInt(image.style.left) + 10 + "px";
+            }, 10);
+
+            stopButton.addEventListener("click", function () {
+                clearInterval(interval);
+            });
+        });
+    </script>
+</body>
+
+</html>
